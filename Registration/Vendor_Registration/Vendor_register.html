@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor and Supplier Registration</title>
+    <link rel="stylesheet" href="Vendor_register.css">
+</head>
+<body background="background image.jpg">
+    <div class="header">
+        <div class="logo">
+            <img src="Health 360.png" alt="RGHS Logo">
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Vendor and Supplier Registration</h1>
+        <form id="vendor-form">
+            <div class="form-group">
+                <label for="company-name"><b>Company Name:</b></label>
+                <input type="text" id="company-name" name="company_name" placeholder="Enter company name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-person"><b>Contact Details:</b></label>
+                <input type="text" id="contact-person" name="contact_person" placeholder="Enter contact details" required>
+            </div>
+
+            <div class="form-group">
+                <label for="license-number"><b>License Number:</b></label>
+                <input type="text" id="license-number" name="license_number" placeholder="Enter license number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="products-services"><b>Product Description:</b></label>
+                <textarea id="products-services" name="products_services" placeholder="Describe the products/services provided" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="billing-info"><b>Billing Information:</b></label>
+                <textarea id="billing-info" name="billing_info" placeholder="Enter billing information or order details" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+
+    <script src="Vendor_register.js"></script>
+</body>
+</html>

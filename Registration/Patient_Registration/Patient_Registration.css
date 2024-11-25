@@ -1,0 +1,113 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('background image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Header Section */
+.header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.7); /* Slightly translucent background */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+.logo img {
+    margin-top: -100px;
+
+    max-width: 300x;
+    max-height: 300px;
+}
+
+/* Heading Styling */
+.header h1 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #005e63;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.85); /* More transparent for visible background */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #00b682;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #005a43;
+}
+
+/* Grouped Fields */
+.name-group, .contact-group, .Age-group {
+    display: flex;
+    gap: 20px;
+}
+
+.name-field, .contact-field, .Age-field {
+    flex: 1;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .name-group, .contact-group, .Age-group {
+        flex-direction: column;
+    }
+}
