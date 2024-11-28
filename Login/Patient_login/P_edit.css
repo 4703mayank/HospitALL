@@ -76,6 +76,10 @@ button[type="submit"] {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #01646b; /* Darker green on hover */
+}
+
 /* Styling the logo on the left */
 .logo {
     margin-top: 50px;

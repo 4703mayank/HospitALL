@@ -21,4 +21,4 @@ DROP TABLE vendor_login;
 DROP TABLE vendor_register;
 Show TABLES;
 SELECT * FROM vendor_register;
-SELECT * FROM doctors;
+SELECT * FROM vendor_login;

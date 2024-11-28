@@ -28,7 +28,23 @@
         </form>
         <div id="message"></div>
         <p>Don't have an account? <a href="/Registration/Patient_Registration/Patient_Registration.html">Register here</a></p>
-    </div>
-<script src="P_login.js"> </script>
+        </div>
+
+        <div id="popup">
+            //Your default password is "your_name@yearOfBirth"
+               <span class="close-btn" onclick="closePopup()">×</span>
+             </div>
+             
+<script src="P_login.js"> 
+    // Show popup when the page loads
+    window.onload = function() {
+                    document.getElementById("popup").style.display = "block";
+                  };
+                
+                  // Function to close the popup
+                  function closePopup() {
+                    document.getElementById("popup").style.display = "none";
+                  }
+</script>
 </body>
 </html>

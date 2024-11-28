@@ -16,3 +16,16 @@ CREATE TABLE patients (
 );
 
 Select * From patients;
+
+truncate patients;
+
+DROP TABLE patients;
+SELECT * FROM vendor_login;
+SHOW TABLES;
+
+DELETE FROM patients WHERE id = 10;
+DELETE FROM patients WHERE id = 11;
+DELETE FROM patients WHERE id = 12;
+DELETE FROM patients WHERE id = 13;
+ 
+Use Hospital;

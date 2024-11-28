@@ -115,7 +115,7 @@ button {
 }
 
 button:hover {
-    background-color: #006135;
+    background-color: #01646b; /* Darker green on hover */
 }
 
 /* Responsive Design */

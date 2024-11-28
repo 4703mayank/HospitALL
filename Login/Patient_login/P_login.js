@@ -26,13 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // Send login data to the server for validation
-        fetch('http://localhost:3000/login', {
+        
+        fetch('http://localhost:3001/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
                 username: loginData.username, 
                 password: loginData.password 
+                
             })
         })
         .then(response => response.json())
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 messageDiv.className = "success";
                 messageDiv.style.display = "block";
                 setTimeout(() => {
-                    window.location.href = "";  // Adjust to your desired redirection path
+                    window.location.assign("newPassword.html");  // Adjust to your desired redirection path
                 }, 2000);
             } else {
                 messageDiv.innerHTML = data.message;

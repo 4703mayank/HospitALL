@@ -85,7 +85,7 @@ body::before {
 
 h2 {
     text-align: center;
-    color: #007BFF; /* Attractive heading color */
+    color: #01646b; /* Attractive heading color */
 }
 
 label {
@@ -119,7 +119,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #01646b; /* Darker green on hover */
 }
 
 #message {
@@ -132,7 +132,7 @@ p {
 }
 
 a {
-    color: #007BFF; /* Link color */
+    color: #01646b; /* Link color */
     text-decoration: none; /* Remove underline */
 }
 

@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const bcrypt = require('bcryptjs'); // For secure password comparison
 
 // Initialize the app
 const app = express();
@@ -21,7 +22,7 @@ const db = mysql.createConnection({
 
 db.connect(err => {
     if (err) {
-        console.error('Database connection failed: ', err);
+        console.error('Database connection failed:', err);
     } else {
         console.log('Connected to the database.');
     }
@@ -38,13 +39,11 @@ app.post('/login', (req, res) => {
 
     // Query to get user details based on mobile number
     const query = 'SELECT * FROM patients WHERE phone = ?';
-    db.query(query, [username], (err, results) => {
+    db.query(query, [username], async (err, results) => {
         if (err) {
             console.error('Database Error:', err);
             return res.status(500).json({ message: 'Database error during login.' });
         }
-
-        console.log("Query Results: ", results); // Debug: Log the results
 
         if (results.length === 0) {
             return res.status(400).json({ message: 'No user found with this mobile number.' });
@@ -52,22 +51,28 @@ app.post('/login', (req, res) => {
 
         const user = results[0];
 
-        // Generate the expected password
-        const yearOfBirth = new Date(user.dob).getFullYear();
-        const expectedPassword = `${user.first_name}@${yearOfBirth}`;
-
-        // Check if the password matches
-        if (password !== expectedPassword) {
+        // Compare the provided password with the stored hashed password
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        if (!passwordMatch) {
             return res.status(400).json({ message: 'Invalid password.' });
         }
 
-        // Success
-        res.status(200).json({ message: 'Login successful', user: user });
+        // Login successful
+        res.status(200).json({
+            message: 'Login successful',
+            user: {
+                id: user.id,
+                first_name: user.first_name,
+                last_name: user.last_name,
+                phone: user.phone,
+                email: user.email
+            }
+        });
     });
 });
 
 // Start the server
-const PORT = 3000; // You can change the port if necessary
+const PORT = 3001; // You can change the port if necessary
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

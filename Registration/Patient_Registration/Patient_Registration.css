@@ -92,7 +92,7 @@ button {
 }
 
 button:hover {
-    background-color: #005a43;
+    background-color: #01646b; /* Darker green on hover */
 }
 
 /* Grouped Fields */
